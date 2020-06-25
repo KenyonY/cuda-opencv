@@ -4,7 +4,6 @@
 
 ### 方法三： 最省心的方案
 
-教程：https://medium.com/analytics-vidhya/vs-code-with-opencv-c-on-windows-10-explained-256418442c52 
   到 https://github.com/huihut/OpenCV-MinGW-Build 下载一个MinGW编译好了的opencv, 解压后路径放到环境变量中， 
 
   然后配置vscode的三个json文件就可以开心的使用opencv了！ 
