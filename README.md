@@ -1,8 +1,23 @@
 # 安装
 
+
+
+### 方法三： 最省心的方案
+
+教程：https://medium.com/analytics-vidhya/vs-code-with-opencv-c-on-windows-10-explained-256418442c52 
+  到 https://github.com/huihut/OpenCV-MinGW-Build 下载一个MinGW编译好了的opencv, 解压后路径放到环境变量中， 
+
+  然后配置vscode的三个json文件就可以开心的使用opencv了！ 
+
+  这三个json文件在本目录的`vscode配置`中，直接拉到.vscode文件夹中即可。
+
+
+
 ### 方法一：使用预编译的opencv二进制包
 
 直接在官网下载编译好的opencv二进制包`opencv-x.x.0-vc14_vc15.exe`
+
+看到vc15就该明白，这玩意儿是visual studio编译出来的，如果想用mingw，请看方法二 或三。
 
 解压后会得到两个文件夹： build 和 source
 
@@ -30,7 +45,7 @@ setx -m OPENCV_DIR C:\opencv\build\x64\vc15
 
 
 * 安装mingw (https://sourceforge.net/projects/mingw-w64/files/mingw-w64/), 选择
-  随便是online安装或者是离线安装，但是"Threads",必须是选择 "posix"而不是"win32"，因为win32线程模型不支持C ++ 11线程
+  随便是online安装或者是离线安装，如`x86_64-posix-seh`，也就是"Threads",必须是选择 "posix"而不是"win32"，因为win32线程模型不支持C ++ 11线程
 
   路径加入环境变量： 
 
@@ -82,17 +97,20 @@ setx -m OPENCV_DIR C:\opencv\build\x64\vc15
   * 坑2
     ffmpeg donwload失败, 通过build\opencv目录下的CMakeDownloadLog.txt可以找到对应的下载地址，然后手动下载方到source目录下的.cache文件夹中，其中ffmpeg我已经手动下载好了，在当前目录下中可找到。
   
-  * 先generate一波试试：生成MinGW Makefile
+  * generate：生成MinGW Makefile
   
   * 管理员到`C:\OpenCv\Build\opencv` 下：
   
     ```bash
     cd C:\OpenCv\Build\opencv
     mingw32-make
-    or
     mingw32-make install
     ```
   
-    
+  
+  
+  
+
+
 
 
